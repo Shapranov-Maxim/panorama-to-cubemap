@@ -27,6 +27,7 @@ const convertImage = (src, usrOptions) => {
     return new Promise(resolve => {
         loadImage(src).then((img) => {
             const { width, height } = img;
+            img.crossOrigin = "Anonymous";
             canvas.width = width;
             canvas.height = height;
             ctx.drawImage(img, 0, 0);
